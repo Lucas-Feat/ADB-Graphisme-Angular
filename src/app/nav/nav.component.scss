@@ -1,0 +1,44 @@
+#menu {
+  background-color: #f1eae0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  color: #e93119;
+  font-size: 4vh;
+}
+
+#typewriter {
+  margin-bottom: 20px;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+#logo {
+  height: 50px;
+}
+
+.menu_link {
+  display: inline-block;
+  text-decoration: none;
+  color: #e93119;
+  font-family: raleway, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.9em;
+  transition: 0.2s ease;
+}
+
+.menu_link:hover {
+  color: #8db5ad;
+  transform: translate(20px);
+}
+
+@media (min-width: 992px) {
+  #logo {
+    height: 150px;
+  }
+} ;
