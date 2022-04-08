@@ -1,3 +1,32 @@
-p {
-  height: 3000px;
+#footer {
+  background-color: #f1eae0;
+  padding: 50px;
+  font-weight: 500;
+}
+
+div {
+  color: #e93119;
+  font-size: 1.2em;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #e93119;
+  transition: 0.2s ease;
+}
+
+a:hover {
+  color: #8db5ad;
+  transform: translateX(20px);
+}
+
+.footer_links {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.5em;
 }

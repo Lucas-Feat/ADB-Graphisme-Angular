@@ -31,19 +31,19 @@ export class ScrollToTopComponent implements OnInit {
 
       scrollProgress!.style.background = `conic-gradient(#e93119 ${scrollValue}%,rgba(0,0,0,0) ${scrollValue}%)`;
 
-      // if (scrollValue > 10) {
-      //   scrollImg!.style.opacity = '1';
-      // } else {
-      //   scrollImg!.style.opacity = '0';
-      // }
+      if (scrollValue > 10) {
+        scrollImg!.style.opacity = '1';
+      } else {
+        scrollImg!.style.opacity = '0';
+      }
 
-      // if (scrollValue > 10) {
-      //   scrollProgress!.style.opacity = '1';
-      //   scrollWhite!.style.opacity = '1';
-      // } else {
-      //   scrollProgress!.style.opacity = '0';
-      //   scrollWhite!.style.opacity = '0';
-      // }
+      if (scrollValue > 10) {
+        scrollProgress!.style.opacity = '1';
+        scrollWhite!.style.opacity = '1';
+      } else {
+        scrollProgress!.style.opacity = '0';
+        scrollWhite!.style.opacity = '0';
+      }
     };
     window.onscroll = scrollPercentage;
   }
