@@ -143,7 +143,19 @@ h1,
 h2,
 h3 {
   font-family: raleway, sans-serif;
-  font-style: normal;
+  font-weight: 600;
   color: #e93119;
   font-size: 4vh;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 3em;
+}
+
+@media (min-width: 778px) {
+  h3 {
+    font-size: 2.2em;
+  }
 }
