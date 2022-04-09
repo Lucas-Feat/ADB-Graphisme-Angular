@@ -10,6 +10,7 @@ import { PreviewCarouselComponent } from './header/preview-carousel/preview-caro
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { MainComponent } from './main/main.component';
 import { ContactComponent } from './main/contact/contact.component';
+import { ServicesComponent } from './main/services/services.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ContactComponent } from './main/contact/contact.component';
     ScrollToTopComponent,
     MainComponent,
     ContactComponent,
+    ServicesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

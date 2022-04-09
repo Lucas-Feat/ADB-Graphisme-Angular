@@ -1,0 +1,52 @@
+#services {
+  margin: 5% 0;
+}
+h3 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 3em;
+}
+
+.service {
+  position: relative;
+  transition: 0.2s ease;
+  margin: 2%;
+}
+
+.service img {
+  height: 100%;
+  width: 100%;
+}
+
+.legend {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: #fff;
+  font-size: 2em;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.service:hover {
+  transform: scale3d(1.05, 1.05, 1.05);
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+@media (min-width: 576px) {
+  .legend {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 778px) {
+  h3 {
+    font-size: 2.2em;
+  }
+  .legend {
+    font-size: 2em;
+  }
+}
