@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { MainComponent } from './main/main.component';
 import { ContactComponent } from './main/contact/contact.component';
 import { ServicesComponent } from './main/services/services.component';
 import { AProposComponent } from './main/a-propos/a-propos.component';
+import { PortfolioComponent } from './main/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,9 @@ import { AProposComponent } from './main/a-propos/a-propos.component';
     ContactComponent,
     ServicesComponent,
     AProposComponent,
+    PortfolioComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, SlickCarouselModule],
   providers: [],
   bootstrap: [AppComponent],
 })

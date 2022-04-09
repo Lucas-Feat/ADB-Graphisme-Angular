@@ -1,0 +1,14 @@
+<ngx-slick-carousel
+  class="carousel"
+  #slickModal="slick-carousel"
+  [config]="slideConfig"
+>
+  <div ngxSlickItem *ngFor="let project of projects" class="slide">
+    <div class="position-relative">
+      <div class="hover_portfolio">
+        <h4>{{ project.name }}</h4>
+      </div>
+      <img src="{{ project.img }}" class="d-block img-fluid mx-auto" />
+    </div>
+  </div>
+</ngx-slick-carousel>
