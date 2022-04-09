@@ -1,0 +1,43 @@
+.contact {
+  width: 100%;
+  margin: 0 auto 2em;
+  background-color: #f1eae0;
+  padding: 3%;
+}
+
+.contact h3 {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 300%;
+}
+
+.contact p,
+.contact a {
+  text-decoration: none;
+  color: #8db5ad;
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.contact a {
+  display: block;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .contact {
+    width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  .contact {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .contact {
+    width: 60%;
+  }
+}

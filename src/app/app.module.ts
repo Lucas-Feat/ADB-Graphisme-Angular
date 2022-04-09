@@ -16,6 +16,10 @@ import { ContactComponent } from './main/contact/contact.component';
 import { ServicesComponent } from './main/services/services.component';
 import { AProposComponent } from './main/a-propos/a-propos.component';
 import { PortfolioComponent } from './main/portfolio/portfolio.component';
+import { FormComponent } from './contact-page/form/form.component';
+import { DescriptionComponent } from './contact-page/description/description.component';
+import { ContactHeaderComponent } from './contact-page/contact-header/contact-header.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { PortfolioComponent } from './main/portfolio/portfolio.component';
     ServicesComponent,
     AProposComponent,
     PortfolioComponent,
+    FormComponent,
+    DescriptionComponent,
+    ContactHeaderComponent,
+    ContactPageComponent,
   ],
   imports: [
     BrowserModule,

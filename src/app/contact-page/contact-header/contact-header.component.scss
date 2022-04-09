@@ -1,0 +1,19 @@
+#logo {
+  padding: 2% 0 0 2%;
+  height: 150px;
+  text-align: center;
+  background-color: #f1eae0;
+}
+#logo img {
+  height: 50%;
+}
+
+@media (min-width: 768px) {
+  #logo {
+    text-align: left;
+    background-color: white;
+  }
+  #logo img {
+    height: 100%;
+  }
+}
