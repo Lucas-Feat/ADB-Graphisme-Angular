@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './header/nav/nav.component';
 import { PreviewCarouselComponent } from './header/preview-carousel/preview-carousel.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { MainComponent } from './main/main.component';
+import { ContactComponent } from './main/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
     NavComponent,
     PreviewCarouselComponent,
     ScrollToTopComponent,
+    MainComponent,
+    ContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

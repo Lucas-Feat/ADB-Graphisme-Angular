@@ -1,0 +1,93 @@
+#contact {
+  background-color: #f1eae0;
+}
+
+#contact img {
+  display: none;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 3em;
+}
+
+#contact div {
+  width: 100%;
+  padding-top: 5%;
+}
+
+#contact div p {
+  color: #8db5ad;
+  font-size: 1.2em;
+  width: 100%;
+  margin: 5% auto;
+  text-align: center;
+  padding: 0 2%;
+}
+
+#contact div a {
+  display: block;
+  padding: 2vh;
+  width: 60vw;
+  text-align: center;
+  margin: 10% auto;
+  color: #f1eae0;
+  text-decoration: none;
+  font-size: 1.4em;
+  background-color: #e93119;
+  border: #e93119 solid 2px;
+  transition: 0.2s ease;
+}
+
+#contact div a:hover {
+  background-color: #f1eae0;
+  color: #e93119;
+}
+
+/*-----ACCROCHE------*/
+
+#accroche {
+  color: #8db5ad;
+  font-size: 2em;
+  text-align: center;
+  padding: 10% 5%;
+  font-weight: 600;
+  font-style: italic;
+}
+
+@media (min-width: 778px) {
+  #contact {
+    height: 50vh;
+  }
+
+  h3 {
+    font-size: 2.2em;
+  }
+  #contact img {
+    display: block;
+  }
+
+  #contact div a {
+    width: 40%;
+  }
+
+  #contact div p {
+    font-size: 1.5em;
+    width: 80%;
+  }
+
+  #accroche {
+    font-size: 4em;
+    padding: 70px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #contact {
+    height: 65vh;
+  }
+  #contact div a {
+    width: 20%;
+  }
+} ;
