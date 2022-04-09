@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { RouterModule } from '@angular/router';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +31,13 @@ import { PortfolioComponent } from './main/portfolio/portfolio.component';
     AProposComponent,
     PortfolioComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SlickCarouselModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CarouselModule,
+    RouterModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
