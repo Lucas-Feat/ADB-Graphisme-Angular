@@ -2,22 +2,25 @@
   background-color: #f1eae0;
 }
 
-#contact img {
-  display: none;
-}
-
 h3 {
   text-align: center;
   font-weight: 600;
   font-size: 3em;
 }
 
-#contact div {
+#contact_link {
   width: 100%;
   padding-top: 5%;
 }
 
-#contact div p {
+.img {
+  background-image: url("../../../assets/img/img_contact.jpg");
+  background-size: cover;
+  width: 40%;
+  display: none;
+}
+
+#contact_link p {
   color: #8db5ad;
   font-size: 1.2em;
   width: 100%;
@@ -26,7 +29,7 @@ h3 {
   padding: 0 2%;
 }
 
-#contact div a {
+#contact_link a {
   display: block;
   padding: 2vh;
   width: 60vw;
@@ -64,7 +67,7 @@ h3 {
   h3 {
     font-size: 2.2em;
   }
-  #contact img {
+  .img {
     display: block;
   }
 
