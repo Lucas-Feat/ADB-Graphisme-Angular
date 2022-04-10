@@ -20,6 +20,7 @@ import { FormComponent } from './contact-page/form/form.component';
 import { DescriptionComponent } from './contact-page/description/description.component';
 import { ContactHeaderComponent } from './contact-page/contact-header/contact-header.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { PortfolioPageComponent } from './portfolio-page/portfolio-page.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     DescriptionComponent,
     ContactHeaderComponent,
     ContactPageComponent,
+    PortfolioPageComponent,
   ],
   imports: [
     BrowserModule,
