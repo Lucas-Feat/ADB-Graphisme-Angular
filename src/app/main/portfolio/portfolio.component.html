@@ -15,10 +15,12 @@
         <ng-container *ngFor="let project of projects">
           <ng-template carouselSlide [id]="project.id">
             <div class="position-relative d-flex">
-              <div class="hover_portfolio">
-                <h4>{{ project.customer }}</h4>
-              </div>
-              <img src="{{ project.img }}" />
+              <a routerLink="/portfolio/{{ project.id }}">
+                <div class="hover_portfolio">
+                  <h4>{{ project.customer }}</h4>
+                </div>
+                <img src="{{ project.img }}" />
+              </a>
             </div>
           </ng-template>
         </ng-container>

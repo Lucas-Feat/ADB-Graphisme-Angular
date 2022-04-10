@@ -7,7 +7,7 @@ import { PortfolioPageComponent } from './portfolio-page/portfolio-page.componen
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'contact', component: ContactPageComponent },
-  { path: 'portfolio', component: PortfolioPageComponent },
+  { path: 'portfolio/:id', component: PortfolioPageComponent },
 ];
 
 @NgModule({
