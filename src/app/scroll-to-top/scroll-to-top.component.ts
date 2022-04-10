@@ -10,13 +10,8 @@ export class ScrollToTopComponent implements OnInit {
 
   ngOnInit(): void {
     document.getElementById('scrollToTop')!.addEventListener('click', () => {
-      document.documentElement.scrollIntoView({
-        block: 'start',
-        behavior: 'smooth',
-        inline: 'start',
-      });
+      window.scroll(0, 0);
     });
-    document.getElementById('scrollToTop')!.style.cursor = 'pointer';
 
     let scrollPercentage = () => {
       let scrollProgress = document.getElementById('scrollToTop');
@@ -40,9 +35,11 @@ export class ScrollToTopComponent implements OnInit {
       if (scrollValue > 10) {
         scrollProgress!.style.opacity = '1';
         scrollWhite!.style.opacity = '1';
+        document.getElementById('scrollToTop')!.style.cursor = 'pointer';
       } else {
         scrollProgress!.style.opacity = '0';
         scrollWhite!.style.opacity = '0';
+        document.getElementById('scrollToTop')!.style.cursor = 'default';
       }
     };
     window.onscroll = scrollPercentage;

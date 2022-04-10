@@ -9,8 +9,8 @@ import { Observable, of } from 'rxjs';
 export class ProjectService {
   constructor() {}
 
-  getProjects(): Project[] {
-    return PROJECTS;
+  getProjects(): Observable<Project[]> {
+    return of(PROJECTS);
   }
 
   getProject(id: string): Observable<Project> {

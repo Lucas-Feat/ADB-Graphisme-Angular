@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Project } from 'src/app/project.model';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ProjectService } from 'src/app/project.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
@@ -35,8 +36,7 @@ export class PortfolioComponent implements OnInit {
     },
     nav: false,
   };
-
-  projects: Project[] = [];
+  projects: Project[] | undefined;
 
   constructor(private projetService: ProjectService) {}
 
@@ -45,6 +45,8 @@ export class PortfolioComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.projects = this.projetService.getProjects();
+    this.projetService
+      .getProjects()
+      .subscribe((projects) => (this.projects = projects));
   }
 }
