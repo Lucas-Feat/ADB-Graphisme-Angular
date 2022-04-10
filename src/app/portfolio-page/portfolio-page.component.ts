@@ -4,6 +4,7 @@ import { Project } from '../project.model';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProjectService } from '../project.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-portfolio-page',
@@ -17,7 +18,8 @@ export class PortfolioPageComponent implements OnInit {
     private route: ActivatedRoute,
     private projectService: ProjectService,
     private location: Location,
-    private router: Router
+    private router: Router,
+    private title: Title
   ) {}
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class PortfolioPageComponent implements OnInit {
     if (this.project === undefined) {
       this.getProject();
     }
+    this.title.setTitle('Portfolio - ' + this.project?.name);
   }
 
   getProject(): void {
