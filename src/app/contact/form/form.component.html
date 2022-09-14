@@ -1,0 +1,53 @@
+<form id="contactform" [formGroup]="form" *ngIf="!isSend">
+  <div class="d-flex flex-column">
+    <label for="name">VOTRE NOM</label>
+    <input type="text" id="name" formControlName="name"
+           [class.invalid]="form.controls.name.invalid && form.controls.name.dirty"/>
+    <p *ngIf="form.controls.name.invalid && form.controls.name.dirty" class="my-1">
+      <small *ngIf="form.controls.name.errors?.required">Champs requis</small>
+    </p>
+  </div>
+
+  <div class="d-flex flex-column">
+    <label for="mail">VOTRE ADRESSE E-MAIL</label>
+    <input type="email" id="mail" formControlName="mail"
+           [class.invalid]="form.controls.mail.invalid && form.controls.mail.dirty"/>
+    <p *ngIf="form.controls.mail.invalid && form.controls.mail.dirty" class="my-1">
+      <small *ngIf="form.controls.mail.errors?.required">Champs requis</small>
+      <small *ngIf="form.controls.mail.errors?.email">Mauvais format d'email</small>
+    </p>
+  </div>
+
+  <div class="d-flex flex-column">
+    <label for="object">OBJET</label>
+    <input type="text" id="object" formControlName="object"
+           [class.invalid]="form.controls.object.invalid && form.controls.object.dirty"/>
+    <p *ngIf="form.controls.object.invalid && form.controls.object.dirty" class="my-1">
+      <small *ngIf="form.controls.object.errors?.required">Champs requis</small>
+    </p>
+  </div>
+
+  <div class="d-flex flex-column">
+    <label for="message">VOTRE MESSAGE</label>
+    <textarea name="message" id="message" formControlName="message" cols="30" rows="10"
+              [class.invalid]="form.controls.message.invalid && form.controls.message.dirty"></textarea>
+    <p *ngIf="form.controls.message.invalid && form.controls.message.dirty" class="my-1">
+      <small *ngIf="form.controls.message.errors?.required">Champs requis</small>
+    </p>
+  </div>
+
+  <button type="submit"
+          [disabled]="form.invalid"
+          (click)="submit()">ENVOYER
+  </button>
+
+  <div *ngIf="error" class="error p-3 mx-auto mb-5">
+    <p class="text-center mb-3">Une erreur est survenue !</p>
+    <p class="text-center">Veuillez réessayer d'envoyer votre message dans un quelques instants.</p>
+  </div>
+</form>
+
+<div *ngIf="isSend" class="is-send p-3 mx-auto my-5">
+  <p class="text-center mb-3">Votre message a bien été envoyé !</p>
+  <p class="text-center">Merci pour votre demande, je vous recontacterai dans les plus brefs delais.</p>
+</div>

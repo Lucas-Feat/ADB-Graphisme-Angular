@@ -1,17 +1,35 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ContactPageComponent } from './contact-page/contact-page.component';
-import { MainComponent } from './main/main.component';
-import { PortfolioPageComponent } from './portfolio-page/portfolio-page.component';
+import {NgModule} from '@angular/core';
+import {ExtraOptions, RouterModule, Routes} from '@angular/router';
+
+const routerOptions: ExtraOptions = {
+  useHash: false,
+  anchorScrolling: 'enabled',
+  scrollPositionRestoration: 'enabled'
+}
 
 const routes: Routes = [
-  { path: '', component: MainComponent },
-  { path: 'contact', component: ContactPageComponent },
-  { path: 'portfolio/:id', component: PortfolioPageComponent },
+  {
+    path: 'accueil',
+    loadChildren: (): Promise<any> => import('./main/main.module').then((value: any) => value.MainModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: (): Promise<any> => import('./contact/contact.module').then((value: any) => value.ContactModule)
+  },
+  {
+    path: 'portfolio',
+    loadChildren: (): Promise<any> => import('./portfolio/portfolio.module').then((value: any) => value.PortfolioModule)
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: '/accueil'
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

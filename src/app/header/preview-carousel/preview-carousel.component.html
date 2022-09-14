@@ -1,9 +1,0 @@
-<div id="carousel">
-  <owl-carousel-o [options]="customOptions" #owlCar>
-    <ng-container *ngFor="let img of imgs; let i = index">
-      <ng-template carouselSlide [id]="i.toString()">
-        <img src="{{ img }}" />
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>
-</div>

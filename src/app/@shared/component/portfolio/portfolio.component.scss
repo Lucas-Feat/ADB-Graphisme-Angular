@@ -1,0 +1,54 @@
+a {
+  text-decoration: none;
+}
+
+#carousel {
+  width: 90%;
+}
+
+.hover_portfolio {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.hover_portfolio:hover {
+  opacity: 1;
+}
+
+.hover_portfolio h4 {
+  color: #e93119;
+  font-weight: 900;
+  font-size: 1.8em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#previous,
+#next {
+  cursor: pointer;
+}
+
+#previous {
+  transform: rotate(-90deg) scale(0.5);
+}
+
+#next {
+  transform: rotate(90deg) scale(0.5);
+}
+
+@media (min-width: 576px) {
+  #previous,
+  #next {
+    display: block;
+  }
+  #carousel {
+    width: 60%;
+  }
+}

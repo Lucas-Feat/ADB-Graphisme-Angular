@@ -1,0 +1,98 @@
+@import "src/styles";
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  width: 90%;
+}
+
+label {
+  margin-bottom: 5px;
+  color: var(--color-primary);
+}
+
+input,
+textarea {
+  border: 2px solid var(--color-primary);
+  margin-bottom: 25px;
+  padding: 10px;
+  transition: border 0.5s ease, background-color 0.5s ease;
+}
+
+.invalid {
+  margin-bottom: 0;
+  background-color: rgba(233, 49, 25, 0.2);
+}
+
+button {
+  width: 100%;
+  display: block;
+  padding: 2vh;
+  text-align: center;
+  margin: 10% auto;
+  color: #f1eae0;
+  text-decoration: none;
+  font-size: 1.4em;
+  background-color: var(--color-danger);
+  border: var(--color-danger) solid 2px;
+  transition: 0.2s ease;
+}
+
+button:hover:enabled {
+  background-color: #f1eae0;
+  color: var(--color-danger);
+}
+
+button:disabled {
+  opacity: 0.2;
+}
+
+input:focus,
+textarea:focus,
+input:active,
+textarea:active {
+  border: 2px solid var(--color-danger);
+  outline: none;
+}
+
+small {
+  color: var(--color-danger);
+  font-size: smaller;
+}
+
+.is-send {
+  color: var(--color-primary);
+  background-color: var(--color-tertiary);
+  font-size: 1.3em;
+}
+
+.error {
+  color: var(--color-danger);
+  background-color: var(--color-tertiary);
+}
+
+@media (min-width: 768px) {
+  form {
+    width: 50%;
+  }
+  .is-send {
+    width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  form {
+    width: 400px;
+  }
+  .is-send {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .is-send {
+    width: 60%;
+  }
+}

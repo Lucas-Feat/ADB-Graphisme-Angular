@@ -1,0 +1,7 @@
+<div id="carousel">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template *ngFor="let project of projects$|async" carouselSlide>
+      <img [src]="project.slider.url" [alt]="project.name"/>
+    </ng-template>
+  </owl-carousel-o>
+</div>

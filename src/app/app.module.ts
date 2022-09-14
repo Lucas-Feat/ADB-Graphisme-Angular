@@ -1,54 +1,72 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {APP_INITIALIZER, LOCALE_ID, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { NavComponent } from './header/nav/nav.component';
-import { PreviewCarouselComponent } from './header/preview-carousel/preview-carousel.component';
-import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
-import { MainComponent } from './main/main.component';
-import { ContactComponent } from './main/contact/contact.component';
-import { ServicesComponent } from './main/services/services.component';
-import { AProposComponent } from './main/a-propos/a-propos.component';
-import { PortfolioComponent } from './main/portfolio/portfolio.component';
-import { FormComponent } from './contact-page/form/form.component';
-import { DescriptionComponent } from './contact-page/description/description.component';
-import { ContactHeaderComponent } from './contact-page/contact-header/contact-header.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
-import { PortfolioPageComponent } from './portfolio-page/portfolio-page.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {SharedModule} from "@shared/shared.module";
+import {initializeApp, FirebaseApp} from "firebase/app";
+import {Firestore, getFirestore} from 'firebase/firestore';
+import {CommonModule, registerLocaleData} from "@angular/common";
+import localeFr from '@angular/common/locales/fr';
+import {ConfigService} from "@core/service/config.service";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
+import {NgxFirestoreRepositoryModule, FIRESTORE_APP} from "@paddls/ngx-firestore-repository";
+import {NgxRepositoryModule} from "@paddls/ngx-repository";
+import {FIREBASE_APP} from "@core/firebase/firebase-app.di";
+
+export function getConfig(configService: ConfigService): () => Promise<any> {
+  return (): Promise<any> => configService.getFirebaseConfig().toPromise();
+}
+
+export function createFirebaseApp(configService: ConfigService): FirebaseApp {
+  return initializeApp(configService.getFirebaseConfigSync());
+}
+
+export function initializeFirestore(app: FirebaseApp): Firestore {
+  return getFirestore(app);
+}
+
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    NavComponent,
-    PreviewCarouselComponent,
-    ScrollToTopComponent,
-    MainComponent,
-    ContactComponent,
-    ServicesComponent,
-    AProposComponent,
-    PortfolioComponent,
-    FormComponent,
-    DescriptionComponent,
-    ContactHeaderComponent,
-    ContactPageComponent,
-    PortfolioPageComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    NgxFirestoreRepositoryModule.forRoot(),
+    NgxRepositoryModule.forRoot(),
+    SharedModule,
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
-    CarouselModule,
-    RouterModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: FIREBASE_APP,
+      useFactory: createFirebaseApp,
+      deps: [ConfigService]
+    },
+    {
+      provide: FIRESTORE_APP,
+      useFactory: initializeFirestore,
+      deps: [FIREBASE_APP]
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: getConfig,
+      deps: [ConfigService],
+      multi: true
+    },
+    {
+      provide: LOCALE_ID,
+      useValue: 'fr'
+    }
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

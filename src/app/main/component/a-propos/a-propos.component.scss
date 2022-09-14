@@ -1,0 +1,25 @@
+#a_propos {
+  section {
+    #profil {
+      max-width: 30%;
+
+      img {
+      }
+    }
+
+    p {
+      color: #8db5ad;
+      font-size: 1.2em;
+      font-weight: 400;
+      width: 100%;
+      margin: auto;
+      line-height: 1.2em;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #a_propos section p {
+    font-size: 1.5em;
+  }
+}
