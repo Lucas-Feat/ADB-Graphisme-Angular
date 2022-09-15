@@ -1,10 +1,12 @@
+$size: 7vw;
+
 #scrollToTop {
   transition: 0.2s ease;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  height: 120px;
-  width: 120px;
+  height: $size;
+  width: $size;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -12,8 +14,8 @@
   z-index: 1000;
 
   img {
-    height: 120px;
-    width: 120px;
+    height: $size;
+    width: $size;
     position: fixed;
     bottom: 20px;
     right: 20px;
