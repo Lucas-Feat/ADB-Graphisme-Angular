@@ -3,29 +3,38 @@
     #profil {
       max-width: 30%;
 
-      img {
-      }
     }
 
     .description {
-      width: 50%;
       margin: auto;
 
       p {
-        color: #8db5ad;
-        font-size: 1.2em;
-        font-weight: 400;
-        width: 100%;
-        margin: auto;
-        line-height: 1.2em;
         text-align: justify;
       }
     }
   }
 }
 
-@media (min-width: 1200px) {
-  #a_propos section p {
-    font-size: 1.5em;
+@media (min-width: 768px) {
+  .description {
+    width: 60%;
+    margin: auto;
   }
 }
+
+@media (min-width: 1200px) {
+  img {
+    max-width: 300px;
+    margin: auto;
+  }
+
+  .description {
+    width: 50%;
+    margin: auto;
+
+    p {
+      font-size: 1.5em;
+    }
+  }
+}
+
