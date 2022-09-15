@@ -15,10 +15,7 @@ export class Project {
 
   @Column()
   public name: string;
-
-  @Column()
-  public customer: string;
-
+  
   @Column()
   public year: string;
 

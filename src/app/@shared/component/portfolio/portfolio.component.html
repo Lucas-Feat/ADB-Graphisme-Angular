@@ -14,7 +14,7 @@
           <ng-template carouselSlide>
             <div class="position-relative d-flex" routerLink="/portfolio/{{ project.id }}">
               <div class="hover_portfolio">
-                <h4>{{ project.customer }}</h4>
+                <h4>{{ project.name }}</h4>
               </div>
               <img src="{{ project.slider.url }}" [alt]="project.name"/>
             </div>

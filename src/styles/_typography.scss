@@ -1,0 +1,26 @@
+@import "variables";
+
+h1,
+h2,
+h3 {
+  font-family: raleway, sans-serif;
+  font-weight: 600;
+  color: var(--color-secondary);
+  font-size: 2em;
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  color: var(--color-primary);
+  font-size: 1.2em;
+}
+
+
+@media (max-width: 778px) {
+  h3 {
+    font-size: 1.5em;
+  }
+}

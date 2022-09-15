@@ -39,7 +39,7 @@ const PIPES: Type<any>[] = [];
     ...COMPONENTS,
     ...PIPES,
     ...DIRECTIVES
-  ]
+  ],
 })
 export class SharedModule {
 }

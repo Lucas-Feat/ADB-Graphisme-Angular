@@ -1,5 +1,5 @@
 #contact {
-  background-color: #f1eae0;
+  background-color: var(--color-tertiary);
 
   img {
     height: 100%;
@@ -12,8 +12,6 @@
     padding-top: 5%;
 
     p {
-      color: #8db5ad;
-      font-size: 1.2em;
       width: 100%;
       margin: 5% auto;
       text-align: center;
@@ -26,28 +24,33 @@
       width: 60vw;
       text-align: center;
       margin: 10% auto;
-      color: #f1eae0;
+      color: var(--color-tertiary);
       text-decoration: none;
       font-size: 1.4em;
-      background-color: #e93119;
-      border: #e93119 solid 2px;
+      background-color: var(--color-secondary);
+      border: var(--color-secondary) solid 2px;
       transition: 0.2s ease;
 
       &:hover {
-        background-color: #f1eae0;
-        color: #e93119;
+        background-color: var(--color-tertiary);
+        color: var(--color-secondary);
       }
     }
   }
 }
 
 #accroche {
-  color: #8db5ad;
+  color: var(--color-primary);
   font-size: 2em;
   text-align: center;
   padding: 10% 5%;
   font-weight: 600;
   font-style: italic;
+  
+  #auteur {
+    font-size: 0.8em;
+    font-style: italic;
+  }
 }
 
 @media (min-width: 778px) {
@@ -67,7 +70,7 @@
   }
 
   #accroche {
-    font-size: 4em;
+    font-size: 3em;
     padding: 70px;
   }
 }

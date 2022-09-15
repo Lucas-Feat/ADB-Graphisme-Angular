@@ -1,40 +1,39 @@
-#scrollToTop,
-#scrollToTop img {
-  height: 120px;
-  width: 120px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-
 #scrollToTop {
   transition: 0.2s ease;
   border-radius: 50%;
   display: grid;
   place-items: center;
-}
-
-#scrollProgress {
-  display: block;
-  height: calc(100% - 10px);
-  width: calc(100% - 10px);
+  height: 120px;
+  width: 120px;
+  position: fixed;
   bottom: 20px;
   right: 20px;
-  transition: 0.2s ease;
-  border-radius: 50%;
-  background-color: white;
-}
-
-#scrollToTop img {
-  z-index: 1000;
-  transform: scale3d(0.95, 0.95, 0.95);
-}
-
-#scrollToTop,
-#scrollImg,
-#scrollProgress {
   opacity: 0;
   z-index: 1000;
+
+  img {
+    height: 120px;
+    width: 120px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    transform: scale3d(0.95, 0.95, 0.95);
+    opacity: 0;
+  }
+
+  #scrollProgress {
+    display: block;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    bottom: 20px;
+    right: 20px;
+    transition: 0.2s ease;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    z-index: 1000;
+  }
 }
 
 @media (max-width: 575px) {
