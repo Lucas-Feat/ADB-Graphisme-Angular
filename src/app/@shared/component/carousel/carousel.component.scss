@@ -1,0 +1,39 @@
+.carousel-container {
+  position: relative;
+  margin-right: 0;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    display: none;
+    right: 0;
+
+    &.image-active {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.switch {
+      animation-name: switch;
+      animation-duration: 5s;
+    }
+  }
+}
+
+@keyframes switch {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+  120% {
+    opacity: 0;
+  }
+}
+

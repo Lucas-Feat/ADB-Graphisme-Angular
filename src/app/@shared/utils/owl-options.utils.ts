@@ -27,6 +27,7 @@ export const owlOptionsUtils: OwlOptions = {
 
 export const previewCarrouselOptions: OwlOptions = {
   loop: true,
+  autoWidth: true,
   mouseDrag: true,
   touchDrag: true,
   pullDrag: true,

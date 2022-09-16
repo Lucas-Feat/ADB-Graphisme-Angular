@@ -1,0 +1,6 @@
+<div *ngIf="(projects$|async)?.length>0" class="carousel-container">
+  <img *ngFor="let project of projects$|async; let i = index"
+       [src]="project.slider.url" [alt]="project.name"
+       [ngClass]="{'image-active': selectedIndex === i}"
+       class="switch">
+</div>

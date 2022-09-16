@@ -3,7 +3,7 @@ import {Column} from "@paddls/ngx-repository";
 export class FileUpload {
 
   @Column()
-  public name: void | string;
+  public name: string;
 
   @Column()
   public url: string;
@@ -11,7 +11,7 @@ export class FileUpload {
   @Column()
   public path: string;
 
-  public file?: File;
+  public file: File;
 
   public constructor(data: Partial<FileUpload> = {}) {
     Object.assign(this, data);
