@@ -74,6 +74,15 @@ header {
       transition: 0.2s ease;
       cursor: pointer;
 
+      a {
+        color: var(--color-tertiary);
+        transition: 0.2s ease;
+
+        &:hover {
+          color: var(--color-primary)
+        }
+      }
+
       &:hover {
         color: var(--color-primary);
         transform: translateX(20px);

@@ -11,6 +11,15 @@ h3 {
 
 h3 {
   text-align: center;
+
+  a {
+    text-decoration: none;
+    color: var(--color-secondary);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
 }
 
 p {
@@ -25,12 +34,6 @@ small {
 
 a {
   text-decoration: none;
-  color: var(--color-secondary);
-  transition: 0.2s ease;
-
-  &:hover {
-    color: var(--color-primary);
-  }
 }
 
 
