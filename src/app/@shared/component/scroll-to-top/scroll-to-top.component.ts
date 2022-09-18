@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-scroll-to-top',
@@ -6,12 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scroll-to-top.component.scss'],
 })
 export class ScrollToTopComponent implements OnInit {
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
-    document.getElementById('scrollToTop')!.addEventListener('click', () => {
-      window.scroll(0, 0);
-    });
 
     let scrollPercentage = () => {
       let scrollProgress = document.getElementById('scrollToTop');
@@ -27,21 +25,25 @@ export class ScrollToTopComponent implements OnInit {
       scrollProgress!.style.background = `conic-gradient(#e93119 ${scrollValue}%,rgba(0,0,0,0) ${scrollValue}%)`;
 
       if (scrollValue > 10) {
-        scrollImg!.style.opacity = '1';
-      } else {
-        scrollImg!.style.opacity = '0';
-      }
-
-      if (scrollValue > 10) {
         scrollProgress!.style.opacity = '1';
         scrollWhite!.style.opacity = '1';
+        scrollImg!.style.opacity = '1';
         document.getElementById('scrollToTop')!.style.cursor = 'pointer';
       } else {
         scrollProgress!.style.opacity = '0';
         scrollWhite!.style.opacity = '0';
+        scrollImg!.style.opacity = '0';
         document.getElementById('scrollToTop')!.style.cursor = 'default';
       }
     };
     window.onscroll = scrollPercentage;
+  }
+
+  public scrollToTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
   }
 }

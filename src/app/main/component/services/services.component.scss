@@ -2,6 +2,13 @@
   position: relative;
   transition: 0.2s ease;
 
+  .legend-hover {
+    p {
+      font-size: 0.7em;
+      color: white;
+    }
+  }
+
   &:hover {
     img {
       filter: blur(3px);

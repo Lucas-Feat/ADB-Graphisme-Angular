@@ -1,28 +1,23 @@
-<header
-  id="header"
-  class="container-fluid position-fixed top-0 w-100 ps-5 py-3 d-flex align-items-center"
->
-  <nav class="ms-10">
-    <ul class="">
-      <li class="mb-1">
-        <a href="/#a_propos" class="menu_link">A PROPOS</a>
-      </li>
-      <li class="mb-1">
-        <a href="/#service" class="menu_link">SERVICES</a>
-      </li>
-      <li class="mb-1">
-        <a href="/#portfolio" class="menu_link">PORTFOLIO</a>
-      </li>
-      <li class="mb-1">
-        <a routerLink="/contact" class="menu_link">CONTACT</a>
-      </li>
-    </ul>
-  </nav>
+<header>
+  <div class="d-flex align-items-center justify-content-between py-3 minimize"
+  >
+    <app-hamburger-menu (action)="closeOrOpen($event)"></app-hamburger-menu>
+    <img
+      routerLink="/"
+      src="assets/img/logo.webp"
+      alt="ADBGraphisme"
+      id="logo"
+      [ngClass]="{'active': open}"
+    />
+    <div class="hide"></div>
+  </div>
+
+  <div class="menu" [ngClass]="{'active': open}">
+    <div class="d-flex flex-column align-items-start me-auto mb-2 py-5 mt-5 ps-5">
+      <h3 routerLink="/accueil" class="mt-md-5">ACCUEIL</h3>
+      <h3 routerLink="/accueil" fragment="portfolio">PORTFOLIO</h3>
+      <h3 routerLink="/contact">CONTACT</h3>
+    </div>
+  </div>
+
 </header>
-<img
-  routerLink="/"
-  src="assets/img/logo.webp"
-  alt="ADBGraphisme"
-  id="logo"
-  class="position-fixed top-0 mt-3"
-/>

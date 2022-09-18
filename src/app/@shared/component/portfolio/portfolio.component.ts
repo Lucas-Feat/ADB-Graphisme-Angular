@@ -4,12 +4,14 @@ import {owlOptionsUtils} from "@shared/utils/owl-options.utils";
 import {Observable} from "rxjs";
 import {Project} from "@core/model/project.model";
 import {AppService} from "@core/service/app.service";
+import {OnDestroyListener} from "@paddls/ngx-common";
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
+@OnDestroyListener()
 export class PortfolioComponent {
 
   @Input() title: String;

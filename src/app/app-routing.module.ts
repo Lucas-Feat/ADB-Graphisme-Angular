@@ -1,10 +1,13 @@
 import {NgModule} from '@angular/core';
 import {ExtraOptions, RouterModule, Routes} from '@angular/router';
+import {CgvComponent} from "@shared/component/cgv/cgv.component";
+import {MentionsLegalesComponent} from "@shared/component/mentions-legales/mentions-legales.component";
 
 const routerOptions: ExtraOptions = {
   useHash: false,
   anchorScrolling: 'enabled',
-  scrollPositionRestoration: 'enabled'
+  scrollPositionRestoration: 'enabled',
+  scrollOffset: [0, 64],
 }
 
 const routes: Routes = [
@@ -19,6 +22,14 @@ const routes: Routes = [
   {
     path: 'portfolio',
     loadChildren: (): Promise<any> => import('./portfolio/portfolio.module').then((value: any) => value.PortfolioModule)
+  },
+  {
+    path: 'mentions-legales',
+    component: MentionsLegalesComponent
+  },
+  {
+    path: 'cgv',
+    component: CgvComponent
   },
   {
     path: '**',

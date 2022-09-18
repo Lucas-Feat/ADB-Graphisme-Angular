@@ -11,5 +11,5 @@ export class MainComponent {
   constructor(private title: Title) {
     this.title.setTitle('ADBGraphisme');
   }
-  
+
 }

@@ -1,55 +1,29 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light p-0">
-  <div
-    id="menu"
-    class="container-fluid d-flex flex-md-column justify-content-start align-items-md-start"
+<header>
+  <div class="d-flex align-items-center justify-content-between py-3 minimize"
   >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand mx-auto m-md-0" href="#">
-      <img
-        src="../../../../assets/img/logo.webp"
-        alt="ADBGraphisme"
-        id="logo"
-        class="ms-md-4"
-      />
-    </a>
-    <div id="jobs" class="w-100 ps-5 mb-3">
-      <h1 class="m-0">ADB GRAPHISME</h1>
-      <span id="typewriter" class="h2"></span>
-    </div>
-    <div
-      class="collapse navbar-collapse ps-5 flex-grow-1"
-      id="navbarSupportedContent"
-    >
-      <ul class="d-flex flex-column navbar-nav me-auto mb-2 mb-lg-0">
-        <li>
-          <a routerLink="/accueil" fragment="a_propos" class="menu_link scollLink mb-md-2 mb-xl-4"
-          >A PROPOS</a
-          >
-        </li>
-        <li>
-          <a routerLink="/accueil" fragment="services" class="menu_link scrollLink mb-md-2 mb-xl-4"
-          >SERVICES</a
-          >
-        </li>
-        <li>
-          <a routerLink="/accueil" fragment="portfolio" class="menu_link scrollLink mb-md-2 mb-xl-4"
-          >PORTFOLIO</a
-          >
-        </li>
-        <li class="mb-4">
-          <a routerLink="/contact" class="menu_link">CONTACT</a>
-        </li>
-      </ul>
+    <app-hamburger-menu class="d-md-none" (action)="closeOrOpen($event)"></app-hamburger-menu>
+    <img
+      routerLink="/"
+      src="assets/img/logo.webp"
+      alt="ADBGraphisme"
+      id="logo"
+      class="ms-md-5"
+      [ngClass]="{'active': open}"
+    />
+    <div class="hide"></div>
+  </div>
+  <div id="jobs" class="w-100 ps-5 my-3 py-5 py-md-0">
+    <h1 class="m-0">ADB GRAPHISME</h1>
+    <span id="typewriter" class="h2"></span>
+  </div>
+
+  <div class="menu" [ngClass]="{'active': open}">
+    <div class="d-flex flex-column align-items-start me-auto mb-2 py-5 py-md-0 mt-5 mt-md-0 ps-5">
+      <h3 class="mb-lg-2"><a href="/accueil#a_propos">A PROPOS</a></h3>
+      <h3 class="mb-lg-2"><a href="/accueil#services">SERVICES</a></h3>
+      <h3 class="mb-lg-2"><a href="/accueil#portfolio">PORTFOLIO</a></h3>
+      <h3 routerLink="/contact" class="mb-lg-2">CONTACT</h3>
     </div>
   </div>
-</nav>
+
+</header>

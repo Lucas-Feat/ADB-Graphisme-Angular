@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 // @ts-ignore
 import Typewriter from 't-writer.js';
 
@@ -8,7 +8,7 @@ import Typewriter from 't-writer.js';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  constructor() {}
+  public open: boolean = false;
 
   ngOnInit(): void {
     const tw = document.getElementById('typewriter');
@@ -33,4 +33,9 @@ export class NavComponent implements OnInit {
       .remove(15)
       .start();
   }
+
+  public closeOrOpen(event: boolean) {
+    this.open = event;
+  }
+
 }

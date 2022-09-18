@@ -5,16 +5,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {SharedModule} from "@shared/shared.module";
-import {initializeApp, FirebaseApp} from "firebase/app";
+import {FirebaseApp, initializeApp} from "firebase/app";
 import {Firestore, getFirestore} from 'firebase/firestore';
 import {CommonModule, registerLocaleData} from "@angular/common";
 import localeFr from '@angular/common/locales/fr';
 import {ConfigService} from "@core/service/config.service";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
-import {NgxFirestoreRepositoryModule, FIRESTORE_APP} from "@paddls/ngx-firestore-repository";
+import {FIRESTORE_APP, NgxFirestoreRepositoryModule} from "@paddls/ngx-firestore-repository";
 import {NgxRepositoryModule} from "@paddls/ngx-repository";
 import {FIREBASE_APP} from "@core/firebase/firebase-app.di";
+
 
 export function getConfig(configService: ConfigService): () => Promise<any> {
   return (): Promise<any> => configService.getFirebaseConfig().toPromise();
