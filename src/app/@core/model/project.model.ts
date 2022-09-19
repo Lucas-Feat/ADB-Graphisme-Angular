@@ -15,12 +15,15 @@ export class Project {
 
   @Column()
   public name: string;
-  
+
   @Column()
   public year: string;
 
   @Column()
   public description: string;
+
+  @Column()
+  public link: string;
 
   @Column(() => FileUpload)
   public slider: FileUpload;

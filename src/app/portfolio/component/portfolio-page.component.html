@@ -7,34 +7,39 @@
   <main class="py-5 px-4 px-md-0 w-60 mx-auto">
     <div
       id="title"
-      class="d-flex flex-column align-items-center flex-md-row justify-content-md-between mb-5"
+      class="d-flex flex-column align-items-center align-items-md-start flex-md-row justify-content-md-between mb-5"
     >
-      <h2>{{ project.name }}</h2>
-      <div class="pt-3 pt-md-0">
-        <h2>ANNÉE</h2>
+      <div class="pt-3 pt-md-0 text-center text-md-start">
+        <h1 class="mb-3">{{ project.name }}</h1>
+        <p class="text-center text-md-start" *ngIf="project.link">
+          <a [href]="project.link" target="_blank">Site du client</a>
+        </p>
+      </div>
+      <div class="pt-4 pt-md-0 text-center text-md-start">
+        <h2 class="mb-3">ANNÉE</h2>
         <p class="text-center text-md-start"><small>{{ project.year }}</small></p>
       </div>
     </div>
     <div id="description" class="mb-5">
       <p>{{ project.description }}</p>
     </div>
-    <div id="pics" class="row">
+    <div id="pics" class="row" *ngIf="project.portfolio$|async as portfolios">
       <div class="col-12 col-sm-6 d-flex flex-column">
-        <div *ngFor="let portfolio of project.portfolio$|async; let index = index">
-          <img *ngIf="index%2 == 0"
+        <div *ngFor="let portfolio of portfolios; let i = index">
+          <img *ngIf="i%2 === 0"
                [src]="portfolio.url"
                [alt]="project.name"
-               class="img-fluid mb-4"
-          />
+               class="img-fluid mb-4"/>
         </div>
       </div>
       <div class="col-12 col-sm-6 d-flex flex-column">
-        <div *ngFor="let portfolio of project.portfolio$|async; let index = index">
-          <img *ngIf="index%2 != 0"
-               [src]="portfolio.url"
-               [alt]="project.name"
-               class="img-fluid mb-4"
-          />
+        <div>
+          <div *ngFor="let portfolio of portfolios; let i = index">
+            <img *ngIf="i%2 !== 0"
+                 [src]="portfolio.url"
+                 [alt]="project.name"
+                 class="img-fluid mb-4"/>
+          </div>
         </div>
       </div>
     </div>

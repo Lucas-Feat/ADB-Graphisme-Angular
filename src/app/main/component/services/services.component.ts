@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {previewCarrouselOptions} from "@shared/utils/owl-options.utils";
 
 @Component({
   selector: 'app-services',
@@ -6,4 +7,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent {
+  public customOptions = previewCarrouselOptions
 }

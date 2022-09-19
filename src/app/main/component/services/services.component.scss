@@ -46,7 +46,24 @@
 
   .legend-hover {
     opacity: 0;
+
+    p {
+      margin-bottom: 2%;
+    }
   }
+}
+
+#previous,
+#next {
+  cursor: pointer;
+}
+
+#previous {
+  transform: rotate(-90deg) scale(0.5);
+}
+
+#next {
+  transform: rotate(90deg) scale(0.5);
 }
 
 @media (max-width: 576px) {

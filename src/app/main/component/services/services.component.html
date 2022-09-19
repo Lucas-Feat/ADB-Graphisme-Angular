@@ -1,6 +1,6 @@
 <div id="services">
   <h3>SERVICES</h3>
-  <div class="container-fluid px-4 my-5">
+  <div class="container-fluid px-4 my-5 d-none d-sm-block">
     <div class="row g-5">
       <div class="service col-12 col-sm-6 col-md-3">
         <img src="assets/img/services/print.png" alt="Communication support imprimé"/>
@@ -9,10 +9,10 @@
           <p>Logotype</p>
           <p>Carte de visite</p>
           <p>Brochure</p>
-          <p>catalogue</p>
+          <p>Catalogue</p>
           <p>Affiche</p>
           <p>Banderole</p>
-          <p>stickers</p>
+          <p>Stickers</p>
           <p>Faire-part</p>
         </div>
       </div>
@@ -46,6 +46,80 @@
           <p>Peinture aquarelle</p>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="mb-5 d-sm-none">
+    <div id="carousel" class="order-1my-0 px-5 pt-2">
+      <owl-carousel-o [options]="customOptions" #owlCar class="w-100">
+        <ng-template carouselSlide>
+          <div class="service">
+            <img src="assets/img/services/print.png" alt="Communication support imprimé"/>
+            <div class="legend">Communication support imprimé</div>
+            <div class="legend-hover">
+              <p>Logotype</p>
+              <p>Carte de visite</p>
+              <p>Brochure</p>
+              <p>Catalogue</p>
+              <p>Affiche</p>
+              <p>Banderole</p>
+              <p>Stickers</p>
+              <p>Faire-part</p>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="service">
+            <img src="assets/img/services/webdesign.png" alt="Communication support web"/>
+            <div class="legend" data-hover="blable">Communication support web</div>
+            <div class="legend-hover">
+              <p>Maquette web</p>
+              <p>Maquette application</p>
+              <p>Landing page</p>
+              <p>Post réseaux sociaux</p>
+              <p>Bannières</p>
+              <p>Stories</p>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="service">
+            <img src="assets/img/services/motion.png" alt="Motion Design"/>
+            <div class="legend">Motion Design</div>
+            <div class="legend-hover">
+              <p>Vidéo d’entreprise</p>
+              <p>GIF</p>
+              <p>Stories</p>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="service">
+            <img src="assets/img/services/illustration.png" alt="Illustration"/>
+            <div class="legend">Illustration</div>
+            <div class="legend-hover">
+              <p>Illustration numérique</p>
+              <p>Illustration traditionnelle</p>
+              <p>Peinture aquarelle</p>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+    <div class="d-flex align-items-center justify-content-around flex-wrap">
+      <img
+        src="assets/img/scrollToTop.png"
+        alt="previous"
+        (click)="owlCar.prev()"
+        id="previous"
+        class="order-2"
+      />
+      <img
+        src="assets/img/scrollToTop.png"
+        alt="next"
+        (click)="owlCar.next()"
+        id="next"
+        class="order-3"
+      />
     </div>
   </div>
 </div>

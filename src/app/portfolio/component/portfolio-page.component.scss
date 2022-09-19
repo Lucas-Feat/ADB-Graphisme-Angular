@@ -1,5 +1,4 @@
 #banniere {
-  height: 300px;
 
   img {
     width: 100%;
@@ -22,6 +21,23 @@
 
     small {
       color: #5C5C5C;
+    }
+
+    a {
+      font-size: smaller;
+      padding: 5px;
+      text-align: center;
+      margin: 10% auto;
+      color: var(--color-tertiary);
+      text-decoration: none;
+      background-color: var(--color-secondary);
+      border: var(--color-secondary) solid 2px;
+      transition: 0.2s ease;
+
+      &:hover {
+        background-color: white;
+        color: var(--color-secondary);
+      }
     }
   }
 }
