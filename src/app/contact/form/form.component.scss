@@ -73,12 +73,52 @@ small {
   background-color: var(--color-tertiary);
 }
 
+.interrogation {
+  background-color: white;
+  border: white;
+  padding: 0;
+  margin: 0;
+  width: 15px;
+  position: relative;
+
+  &:hover {
+    background-color: white !important;
+  }
+
+  img {
+    height: 15px;
+    width: 15px;
+  }
+
+  p {
+    padding: 10px;
+    font-size: 0.8rem;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-tertiary);
+    width: 70vw;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(-7px);
+    display: none;
+
+    &.show-tooltip {
+      display: block;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   form {
     width: 50%;
   }
   .is-send {
     width: 90%;
+  }
+  .interrogation {
+    p {
+      width: 30vw;
+    }
   }
 }
 
@@ -88,6 +128,11 @@ small {
   }
   .is-send {
     width: 75%;
+  }
+  .interrogation {
+    p {
+      transform: translateX(102%);
+    }
   }
 }
 

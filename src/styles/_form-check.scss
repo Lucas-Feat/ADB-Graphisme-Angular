@@ -1,0 +1,24 @@
+.form-check {
+  padding: 0;
+  text-align: left;
+  display: flex;
+  align-items: center !important;
+
+  input[type="checkbox"] {
+    margin: 0;
+    border-color: var(--color-primary);
+
+    &:checked {
+      background-color: var(--color-primary);
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  label {
+    margin: 0 5px;
+    font-size: 0.8rem;
+  }
+}

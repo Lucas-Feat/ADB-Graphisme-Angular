@@ -15,6 +15,7 @@ export class FormComponent {
   public form: FormGroup;
   public isSend: boolean = false;
   public error: boolean = false;
+  public hideTooltip: boolean = true;
 
   public constructor(private readonly messageService: MessageService,
                      private readonly formBuilder: FormBuilder) {
@@ -23,6 +24,7 @@ export class FormComponent {
       mail: this.formBuilder.control('', [Validators.required, Validators.email]),
       object: this.formBuilder.control('', Validators.required),
       message: this.formBuilder.control('', Validators.required),
+      check: this.formBuilder.control(false, Validators.requiredTrue)
     })
   }
 
